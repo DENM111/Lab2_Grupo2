@@ -1,4 +1,0 @@
-C:\Users\Jaime\source\repos\Laboratorio_Grupo2_AEROPUERTO\Laboratorio_Grupo2_AEROPUERTO\obj\Debug\net8.0\Laboratorio_Grupo2_AEROPUERTO.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Jaime\source\repos\Laboratorio_Grupo2_AEROPUERTO\Laboratorio_Grupo2_AEROPUERTO\obj\Debug\net8.0\Laboratorio_Grupo2_AEROPUERTO.AssemblyInfoInputs.cache
-C:\Users\Jaime\source\repos\Laboratorio_Grupo2_AEROPUERTO\Laboratorio_Grupo2_AEROPUERTO\obj\Debug\net8.0\Laboratorio_Grupo2_AEROPUERTO.AssemblyInfo.cs
-C:\Users\Jaime\source\repos\Laboratorio_Grupo2_AEROPUERTO\Laboratorio_Grupo2_AEROPUERTO\obj\Debug\net8.0\Laboratorio_Grupo2_AEROPUERTO.csproj.CoreCompileInputs.cache
