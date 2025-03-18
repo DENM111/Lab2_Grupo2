@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Lab_Aeropuerto_Grupo_2
 {
-     class Validaciones
+    class Validaciones
     {
         public static int LeerEntero(string mensaje)
         {
@@ -27,10 +28,27 @@ namespace Lab_Aeropuerto_Grupo_2
             {
                 Console.Write(mensaje);
                 entrada = Console.ReadLine();
-                if (!string.IsNullOrWhiteSpace(entrada))
-                    return entrada;
-                Console.WriteLine("El texto no puede estar vacío.");
+
+                if (string.IsNullOrWhiteSpace(entrada))
+                {
+                    Console.WriteLine("El texto no puede estar vacío.");
+                    continue;
+                }
+
+                if (ContieneNumeros(entrada))
+                {
+                    Console.WriteLine("El texto no puede contener números.");
+                    continue;
+                }
+
+                return entrada;
             }
+        }
+
+        private static bool ContieneNumeros(string texto)
+        {
+            return Regex.IsMatch(texto, @"\d");
         }
     }
 }
+

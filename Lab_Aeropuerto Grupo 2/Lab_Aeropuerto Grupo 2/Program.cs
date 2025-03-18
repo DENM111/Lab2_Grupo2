@@ -26,7 +26,8 @@ namespace Lab_Aeropuerto_Grupo_2
                 Console.WriteLine("1. Agregar");
                 Console.WriteLine("2. Buscar");
                 Console.WriteLine("3. Listar");
-                Console.WriteLine("4. Salir");
+                Console.WriteLine("4 Acciones");
+                Console.WriteLine("5. Salir");
                 int opcion = Validaciones.LeerEntero("Seleccione una opción: ");
 
                 switch (opcion)
@@ -41,6 +42,9 @@ namespace Lab_Aeropuerto_Grupo_2
                         ListarElementos(aviones, pasajeros, boletos, facturas, equipajes, empleados);
                         break;
                     case 4:
+                        Acciones(aviones, pasajeros, boletos, facturas, equipajes, empleados);
+                        break;
+                    case 5:
                         return;
                     default:
                         Console.WriteLine("Opción no válida. Intente de nuevo.");
@@ -171,7 +175,6 @@ namespace Lab_Aeropuerto_Grupo_2
             }
         }
 
-        // Métodos para crear objetos
         static Avion CrearAvion()
         {
             Console.WriteLine(" CREAR AVION  ");
@@ -252,7 +255,6 @@ namespace Lab_Aeropuerto_Grupo_2
             return new Empleado(idEmpleado, nombre, apellido, cargo, salario, fechaIngreso, turno);
         }
 
-        // Métodos para buscar objetos
         static void BuscarAvion(List<Avion> aviones)
         {
             string matricula = Validaciones.LeerTexto("Ingrese la matrícula del avión: ");
@@ -313,7 +315,6 @@ namespace Lab_Aeropuerto_Grupo_2
                 Console.WriteLine("Empleado no encontrado.");
         }
 
-        // Métodos para listar objetos
         static void ListarAviones(List<Avion> aviones)
         {
             foreach (var avion in aviones)
@@ -349,5 +350,222 @@ namespace Lab_Aeropuerto_Grupo_2
             foreach (var empleado in empleados)
                 empleado.MostrarInformacion();
         }
+
+
+        static void Acciones(List<Avion> aviones, List<Pasajero> pasajeros, List<Boleto> boletos, List<Factura> facturas, List<Equipaje> equipajes, List<Empleado> empleados)
+        {
+            Console.Clear();
+            Console.WriteLine("   ACCIONES ");
+            Console.WriteLine("1. Avión");
+            Console.WriteLine("2. Pasajero");
+            Console.WriteLine("3. Boleto");
+            Console.WriteLine("4. Factura");
+            Console.WriteLine("5. Equipaje");
+            Console.WriteLine("6. Empleado");
+            int opcion = Validaciones.LeerEntero("Seleccione una opción: ");
+
+            switch (opcion)
+            {
+                case 1:
+                    AccionesAvion(aviones);
+                    break;
+                case 2:
+                    AccionesPasajero(pasajeros);
+                    break;
+                case 3:
+                    AccionesBoleto(boletos);
+                    break;
+                case 4:
+                    AccionesFactura(facturas);
+                    break;
+                case 5:
+                    AccionesEquipaje(equipajes);
+                    break;
+                case 6:
+                    AccionesEmpleado(empleados);
+                    break;
+                default:
+                    Console.WriteLine("Opción no válida.");
+                    break;
+            }
+        }
+
+        static void AccionesAvion(List<Avion> aviones)
+        {
+            string matricula = Validaciones.LeerTexto("Ingrese la matrícula del avión: ");
+            var avion = aviones.Find(a => a.Matricula == matricula);
+            if (avion != null)
+            {
+                Console.WriteLine("1. Despegar");
+                Console.WriteLine("2. Aterrizar");
+                int opcion = Validaciones.LeerEntero("Seleccione una acción: ");
+                switch (opcion)
+                {
+                    case 1:
+                        avion.Despegar();
+                        break;
+                    case 2:
+                        avion.Aterrizar();
+                        break;
+                    default:
+                        Console.WriteLine("Opción no válida.");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Avión no encontrado.");
+            }
+        }
+
+        static void AccionesPasajero(List<Pasajero> pasajeros)
+        {
+            string documento = Validaciones.LeerTexto("Ingrese el documento del pasajero: ");
+            var pasajero = pasajeros.Find(p => p.Documento == documento);
+            if (pasajero != null)
+            {
+                Console.WriteLine("1. Cambiar asiento");
+                Console.WriteLine("2. Mostrar bienvenida");
+                int opcion = Validaciones.LeerEntero("Seleccione una acción: ");
+                switch (opcion)
+                {
+                    case 1:
+                        string nuevoAsiento = Validaciones.LeerTexto("Ingrese el nuevo asiento: ");
+                        pasajero.CambiarAsiento(nuevoAsiento);
+                        break;
+                    case 2:
+                        pasajero.MostrarBienvenida();
+                        break;
+                    default:
+                        Console.WriteLine("Opción no válida.");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Pasajero no encontrado.");
+            }
+        }
+
+        static void AccionesBoleto(List<Boleto> boletos)
+        {
+            string numeroBoleto = Validaciones.LeerTexto("Ingrese el número de boleto: ");
+            var boleto = boletos.Find(b => b.NumeroBoleto == numeroBoleto);
+            if (boleto != null)
+            {
+                Console.WriteLine("1. Cambiar clase");
+                Console.WriteLine("2. Aplicar descuento");
+                int opcion = Validaciones.LeerEntero("Seleccione una acción: ");
+                switch (opcion)
+                {
+                    case 1:
+                        string nuevaClase = Validaciones.LeerTexto("Ingrese la nueva clase: ");
+                        boleto.CambiarClase(nuevaClase);
+                        break;
+                    case 2:
+                        double porcentaje = Validaciones.LeerEntero("Ingrese el porcentaje de descuento: ");
+                        boleto.AplicarDescuento(porcentaje);
+                        break;
+                    default:
+                        Console.WriteLine("Opción no válida.");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Boleto no encontrado.");
+            }
+        }
+
+        static void AccionesFactura(List<Factura> facturas)
+        {
+            int numeroFactura = Validaciones.LeerEntero("Ingrese el número de factura: ");
+            var factura = facturas.Find(f => f.NumeroFactura == numeroFactura);
+            if (factura != null)
+            {
+                Console.WriteLine("1. Aplicar pago");
+                Console.WriteLine("2. Modificar monto");
+                int opcion = Validaciones.LeerEntero("Seleccione una acción: ");
+                switch (opcion)
+                {
+                    case 1:
+                        factura.AplicarPago();
+                        break;
+                    case 2:
+                        double nuevoMonto = Validaciones.LeerEntero("Ingrese el nuevo monto: ");
+                        factura.ModificarMonto(nuevoMonto);
+                        break;
+                    default:
+                        Console.WriteLine("Opción no válida.");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Factura no encontrada.");
+            }
+        }
+
+        static void AccionesEquipaje(List<Equipaje> equipajes)
+        {
+            string idMaleta = Validaciones.LeerTexto("Ingrese el ID de la maleta: ");
+            var equipaje = equipajes.Find(e => e.IdMaleta == idMaleta);
+            if (equipaje != null)
+            {
+                Console.WriteLine("1. Cambiar peso");
+                int opcion = Validaciones.LeerEntero("Seleccione una acción: ");
+                switch (opcion)
+                {
+                    case 1:
+                        double nuevoPeso = Validaciones.LeerEntero("Ingrese el nuevo peso: ");
+                        equipaje.CambiarPeso(nuevoPeso);
+                        break;
+                    default:
+                        Console.WriteLine("Opción no válida.");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Equipaje no encontrado.");
+            }
+        }
+
+        static void AccionesEmpleado(List<Empleado> empleados)
+        {
+            string idEmpleado = Validaciones.LeerTexto("Ingrese el ID del empleado: ");
+            var empleado = empleados.Find(e => e.IdEmpleado == idEmpleado);
+            if (empleado != null)
+            {
+                Console.WriteLine("1. Aumentar salario");
+                Console.WriteLine("2. Cambiar turno");
+                Console.WriteLine("3. Asignar cargo");
+                int opcion = Validaciones.LeerEntero("Seleccione una acción: ");
+                switch (opcion)
+                {
+                    case 1:
+                        double porcentaje = Validaciones.LeerEntero("Ingrese el porcentaje de aumento: ");
+                        empleado.AumentarSalario(porcentaje);
+                        break;
+                    case 2:
+                        string nuevoTurno = Validaciones.LeerTexto("Ingrese el nuevo turno: ");
+                        empleado.CambiarTurno(nuevoTurno);
+                        break;
+                    case 3:
+                        string nuevoCargo = Validaciones.LeerTexto("Ingrese el nuevo cargo: ");
+                        double nuevoSalario = Validaciones.LeerEntero("Ingrese el nuevo salario: ");
+                        empleado.AsignarCargo(nuevoCargo, nuevoSalario);
+                        break;
+                    default:
+                        Console.WriteLine("Opción no válida.");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Empleado no encontrado.");
+            }
+        }
     }
 }
+

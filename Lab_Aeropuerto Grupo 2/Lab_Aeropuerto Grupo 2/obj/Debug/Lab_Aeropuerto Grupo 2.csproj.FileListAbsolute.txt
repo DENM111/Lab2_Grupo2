@@ -5,3 +5,10 @@ E:\Visual Studio Progra 1\Proyectos\Segundo parcial\SOLID\Lab_Aeropuerto Grupo 2
 E:\Visual Studio Progra 1\Proyectos\Segundo parcial\SOLID\Lab_Aeropuerto Grupo 2\Lab_Aeropuerto Grupo 2\obj\Debug\Lab_Aeropuerto Grupo 2.csproj.CoreCompileInputs.cache
 E:\Visual Studio Progra 1\Proyectos\Segundo parcial\SOLID\Lab_Aeropuerto Grupo 2\Lab_Aeropuerto Grupo 2\obj\Debug\Lab_Aeropuerto Grupo 2.exe
 E:\Visual Studio Progra 1\Proyectos\Segundo parcial\SOLID\Lab_Aeropuerto Grupo 2\Lab_Aeropuerto Grupo 2\obj\Debug\Lab_Aeropuerto Grupo 2.pdb
+C:\Users\50489\Source\Repos\Lab2\Lab_Aeropuerto Grupo 2\Lab_Aeropuerto Grupo 2\bin\Debug\Lab_Aeropuerto Grupo 2.exe.config
+C:\Users\50489\Source\Repos\Lab2\Lab_Aeropuerto Grupo 2\Lab_Aeropuerto Grupo 2\bin\Debug\Lab_Aeropuerto Grupo 2.exe
+C:\Users\50489\Source\Repos\Lab2\Lab_Aeropuerto Grupo 2\Lab_Aeropuerto Grupo 2\bin\Debug\Lab_Aeropuerto Grupo 2.pdb
+C:\Users\50489\Source\Repos\Lab2\Lab_Aeropuerto Grupo 2\Lab_Aeropuerto Grupo 2\obj\Debug\Lab_Aeropuerto Grupo 2.csproj.AssemblyReference.cache
+C:\Users\50489\Source\Repos\Lab2\Lab_Aeropuerto Grupo 2\Lab_Aeropuerto Grupo 2\obj\Debug\Lab_Aeropuerto Grupo 2.csproj.CoreCompileInputs.cache
+C:\Users\50489\Source\Repos\Lab2\Lab_Aeropuerto Grupo 2\Lab_Aeropuerto Grupo 2\obj\Debug\Lab_Aeropuerto Grupo 2.exe
+C:\Users\50489\Source\Repos\Lab2\Lab_Aeropuerto Grupo 2\Lab_Aeropuerto Grupo 2\obj\Debug\Lab_Aeropuerto Grupo 2.pdb
